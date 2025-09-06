@@ -27,7 +27,7 @@ export interface AuthResponse {
 export const authService = {
   async login(data: LoginData): Promise<AuthResponse> {
     const formData = new FormData();
-    formData.append('username', data.email);
+    formData.append('email', data.email);
     formData.append('password', data.password);
     
     const response = await api.post('/auth/login', formData, {
